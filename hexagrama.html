@@ -10,9 +10,30 @@
 
     <body>
         
-        <input type="text" name="ingresa" > <br>
-        <input type="text" name="ingresa" > <br>
-        <input type="text" name="ingresa" > <br>
+        
+            <div class="camposTexto">
+                <div class="Text">
+                    <input type="text" name="ingresa" placeholder="Ingresa numero 1"> <br>
+                    <input type="text" name="ingresa" placeholder="Ingresa numero 2"> <br>
+                    <input type="text" name="ingresa" placeholder="Ingresa numero 3"> <br>
+                </div>
+                <div class="Botones">
+                    <button onclick="calcula()">Aceptar</button>
+                    <button onclick="borrarLine()">Borrar Linea</button>
+                    <button onclick="borrarHex()">Borrar hexagrama</button>
+                </div>
+                     
+            </div>    
+        
+        <div class="hexagrama">
+            <div id="seis"></div>
+            <div id="cinco"></div>
+            <div id="cuatro"></div>
+            <div id="tres"></div>
+            <div id="dos"></div>
+            <div id="uno"></div>
+        </div>
+
 
     </body>
 
