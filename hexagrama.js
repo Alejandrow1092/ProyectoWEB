@@ -317,7 +317,6 @@ function defineCSS(nombre){
     //document.querySelector(nombre).setAttribute("style","visibility: visible");
     document.getElementById(nombre).style.visibility="visible"
 }
-<<<<<<< HEAD
 
 
 function animacion(elem1){
@@ -337,7 +336,6 @@ function animacion(elem1){
         }
     }
     leftInicial=-150;
-=======
 function mOver(obj, x) {
 	obj.style.backgroundColor="green";
 switch (x){
@@ -609,5 +607,4 @@ switch (x){
 function mOut(obj) {
 	obj.style.backgroundColor="#D3D3D3";
 	document.getElementById("nombre").innerHTML = "";
->>>>>>> 4680adf25813868d599b6403c4eb11d98e31a981
 }
