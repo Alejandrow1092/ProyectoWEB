@@ -2,7 +2,7 @@ body{
     background-color:#D3D3D3;
     margin:0;
 }
-
+/*>>>>General>>>>>>>>>>*/
 .camposTexto{
     float: left;
     margin: 50px;
@@ -41,10 +41,9 @@ body{
 /*>>>>>>>>>>>>>>>>>>>>>>>>>>*/
 
 .hexagrama{
-    float: right;
+    float: left;
     position: relative;
     top: 100px;
-    left: -600px;
     width: 200px;
     height: 200px;
     margin: 5px;
@@ -52,13 +51,33 @@ body{
 }
 
 .hexagrama2{
-
+    float: left;
+    position: relative;
+    top: 100px;
+    width: 200px;
+    height: 200px;
+    margin: 5px;
+    background-color: aliceblue;
+    visibility: hidden;
 }
 
 .hexagrama3{
-
+    float: left;
+    position: relative;
+    top: 100px;
+    width: 200px;
+    height: 200px;
+    margin: 5px;
+    background-color: aliceblue;
+    visibility: hidden;
 }
 
 .tabla{
-
+    float: right;
+    clear: both;
+    position: relative;
+    width: auto;
+    right: 400px;
+    
+    
 }
