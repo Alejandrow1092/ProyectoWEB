@@ -42,11 +42,23 @@ body{
 
 .hexagrama{
     float: right;
-    position: relative;
+    /*position: relative;*/
     top: 100px;
-    left: -600px;
+    /*left: -600px;*/
     width: 200px;
     height: 200px;
     margin: 5px;
     background-color: aliceblue;
+}
+
+.hexagrama2{
+
+}
+
+.hexagrama3{
+
+}
+
+.tabla{
+
 }
