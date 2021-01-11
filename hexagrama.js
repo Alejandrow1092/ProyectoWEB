@@ -284,3 +284,275 @@ function defineCSS(nombre){
     //document.querySelector(nombre).setAttribute("style","visibility: visible");
     document.getElementById(nombre).style.visibility="visible"
 }
+function mOver(obj, x) {
+	obj.style.backgroundColor="green";
+switch (x){
+		
+		case 1:{
+		
+		document.getElementById("nombre").innerHTML = "1.  Cielo. Lo creativo. El principio generador";
+		
+			onmouseout=mouseOut(obj);
+	break;
+	}
+		case 2:{
+		document.getElementById("nombre").innerHTML = "2.  Tierra. Lo receptivo. El principio pasivo";
+	break;
+	}
+		case 3:{
+		document.getElementById("nombre").innerHTML = "3.  Acumular. El obstáculo inicial. La dificultad del comienzo";
+	break;
+	}
+		case 4:{
+		document.getElementById("nombre").innerHTML = "4.  Juventud. El joven necio. La inmadurez.";
+	break;
+	}
+		case 5:{
+		document.getElementById("nombre").innerHTML = "5.  Esperar. La espera. La maduración.";
+	break;
+	}
+		case 6:{
+		document.getElementById("nombre").innerHTML = "6.  Disputar. El conflicto. El pleito.";
+	break;
+	}
+		case 7:{
+		document.getElementById("nombre").innerHTML = "7.  Ejército. La legión.";
+	break;
+	}
+		case 8:{
+		document.getElementById("nombre").innerHTML = "8.  Solidaridad. La unión";
+	break;
+	}
+		case 9:{
+		document.getElementById("nombre").innerHTML = "9.  Animalito doméstico. La pequeña fuerza";
+	break;
+	}
+		case 10:{
+		document.getElementById("nombre").innerHTML = "10.  Caminar. El porte. El paso cauteloso";
+	break;
+	}
+		case 11:{
+		document.getElementById("nombre").innerHTML = "11.  Prosperidad. La paz. La armonía.";
+	break;
+	}
+		case 12:{
+		document.getElementById("nombre").innerHTML = "12.  Cierre. El estancamiento. Lo inerte.";
+	break;
+	}
+		case 13:{
+		document.getElementById("nombre").innerHTML = "13. Hombres Reunidos. La unión comunitaria";
+	break;
+	}
+		case 14:{
+		document.getElementById("nombre").innerHTML = "14. Gran dominio. La gran posesión. Lo que se tiene de más.";
+	break;
+	}
+		case 15:{
+		document.getElementById("nombre").innerHTML = "15. Condescendencia. La modestia. La humildad ";
+	break;
+	}
+		case 16:{
+		document.getElementById("nombre").innerHTML = "16. Ocuparse. El entusiasmo. La algarabía.";
+	break;
+	}
+		case 17:{
+		document.getElementById("nombre").innerHTML = "17. Conformarse. La continuidad. El seguimiento. ";
+	break;
+	}
+		case 18:{
+		document.getElementById("nombre").innerHTML = "18. Destrucción. La reconstrucción. La labor en lo corrompido.";
+	break;
+	}
+		case 19:{
+		document.getElementById("nombre").innerHTML = "19. Acercarse. Lo que va llegando.";
+	break;
+	}
+		case 20:{
+		document.getElementById("nombre").innerHTML = "20. Observar. La contemplación. ";
+	break;
+	}
+		case 21:{
+		document.getElementById("nombre").innerHTML = "21. Quebrar mordiendo. La dentellada. La filosa mordedura";
+	break;
+	}
+		case 22:{
+		document.getElementById("nombre").innerHTML = "22. Adornar. La elegancia. La gracia.";
+	break;
+	}
+		case 23:{
+		document.getElementById("nombre").innerHTML = "23. Resquebrajar. La desintegración. El derrumbe";
+	break;
+	}
+		case 24:{
+		document.getElementById("nombre").innerHTML = "24. Regresar. El retorno. Lo que vuelve.";
+	break;
+	}
+		case 25:{
+		document.getElementById("nombre").innerHTML = "25. Sinceridad. La inocencia. La naturalidad.";
+	break;
+	}
+		case 26:{
+		document.getElementById("nombre").innerHTML = "26. Fuerza educadora. El poder de lo fuerte. La gran acumulación.";
+	break;
+	}
+		case 27:{
+		document.getElementById("nombre").innerHTML = "27. Nutrirse. La alimentación. Las fauces.";
+	break;
+	}
+		case 28:{
+		document.getElementById("nombre").innerHTML = "28. Excesos. La preponderancia de lo grande.";
+	break;
+	}
+		case 29:{
+		document.getElementById("nombre").innerHTML = "29. Peligro. Lo abismal. La caida.";
+	break;
+	}
+		case 30:{
+		document.getElementById("nombre").innerHTML = "30. Distinguir. El resplandor. Lo adherente.";
+	break;
+	}
+		case 31:{
+		document.getElementById("nombre").innerHTML = "31. Unir. La influencia.La atracción.";
+	break;
+	}
+		case 32:{
+		document.getElementById("nombre").innerHTML = "32. Luna Creciente. La duración. La permanencia.";
+	break;
+	}
+		case 33:{
+		document.getElementById("nombre").innerHTML = "33. Retirarse. EL repliegue.";
+	break;
+	}
+		case 34:{
+		document.getElementById("nombre").innerHTML = "34. Gran fuerza. El gran vigor.";
+	break;
+	}
+		case 35:{
+		document.getElementById("nombre").innerHTML = "35. Progresar. El avance.";
+	break;
+	}
+		case 36:{
+		document.getElementById("nombre").innerHTML = "36. Luz que se apaga. El oscurecimiento.";
+	break;
+	}
+		case 37:{
+		document.getElementById("nombre").innerHTML = "37. Gente de familia. El clan.";
+	break;
+	}
+		case 38:{
+		document.getElementById("nombre").innerHTML = "38. Contraste. La oposición. El antagonismo.";
+	break;
+	}
+		case 39:{
+		document.getElementById("nombre").innerHTML = "39. Dificultad. El obstáculo. El impedimento.";
+	break;
+	}
+		case 40:{
+		document.getElementById("nombre").innerHTML = "40. Explicar. La liberación. El alivio.";
+	break;
+	}
+		case 41:{
+		document.getElementById("nombre").innerHTML = "41. Perder. La disminución.";
+	break;
+	}
+		case 42:{
+		document.getElementById("nombre").innerHTML = "42. Evolución. El aumento. La ganancia.";
+	break;
+	}
+		case 43:{
+		document.getElementById("nombre").innerHTML = "43. Decidir. El desbordamiento. La resolución.";
+	break;
+	}
+		case 44:{
+		document.getElementById("nombre").innerHTML = "44. Encontrarse. El acoplamiento.";
+	break;
+	}
+		case 45:{
+		document.getElementById("nombre").innerHTML = "45. Cosechar. La reunión. La convergencia.";
+	break;
+	}
+		case 46:{
+		document.getElementById("nombre").innerHTML = "46. Subir. El ascenso. La escalada.";
+	break;
+	}
+		case 47:{
+		document.getElementById("nombre").innerHTML = "47. Angustia. La pesadumbre. El agotamiento.";
+	break;
+	}
+		case 48:{
+		document.getElementById("nombre").innerHTML = "48. El pozo de agua. La fuente.";
+	break;
+	}
+		case 49:{
+		document.getElementById("nombre").innerHTML = "49. Renovar. La revolución. El cambio";
+	break;
+	}
+		case 50:{
+		document.getElementById("nombre").innerHTML = "50. La caldera. Lo alquímico ";
+	break;
+	}
+		case 51:{
+		document.getElementById("nombre").innerHTML = "51. Trueno. La conmoción. Lo suscitativo.";
+	break;
+	}
+		case 52:{
+		document.getElementById("nombre").innerHTML = "52. Cimientos. La quietud. La detención.";
+	break;
+	}
+		case 53:{
+		document.getElementById("nombre").innerHTML = "53. Evolución. El progreso gradual.";
+	break;
+	}
+		case 54:{
+		document.getElementById("nombre").innerHTML = "54. Desposar a la hija menor. La doncella.";
+	break;
+	}
+		case 55:{
+		document.getElementById("nombre").innerHTML = "55. Abundancia. La plenitud.";
+	break;
+	}
+		case 56:{
+		document.getElementById("nombre").innerHTML = "56. Viajero. El andariego";
+	break;
+	}
+		case 57:{
+		document.getElementById("nombre").innerHTML = "57. Viento. Lo penetrante. Lo suave.";
+	break;
+	}
+		case 58:{
+		document.getElementById("nombre").innerHTML = "58. Recogerse. La serenidad. La satisfacción.";
+	break;
+	}
+		case 59:{
+		document.getElementById("nombre").innerHTML = "59. Confusión. La dispersión. La disolución.";
+	break;
+	}
+		case 60:{
+		document.getElementById("nombre").innerHTML = "60. Moderación. La restricción. La limitación";
+	break;
+	}
+		case 61:{
+		document.getElementById("nombre").innerHTML = "61. Fe Interior. La verdad interior. La sinceridad interna.";
+	break;
+	}
+		case 62:{
+		document.getElementById("nombre").innerHTML = "62. Pequeñas cosas importantes. La pequeña preponderancia.";
+	break;
+	}
+		case 63:{
+		document.getElementById("nombre").innerHTML = "63. Conclusiones. Después de la realización.";
+	break;
+	}
+		case 64:{
+		document.getElementById("nombre").innerHTML = "64. Inconcluso. Antes de la realización.";
+	break;
+	}
+
+
+}
+	
+}
+function mOut(obj) {
+	obj.style.backgroundColor="#D3D3D3";
+	document.getElementById("nombre").innerHTML = "";
+}
