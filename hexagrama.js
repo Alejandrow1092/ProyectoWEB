@@ -2,6 +2,9 @@
 const num =["uno", "dos", "tres", "cuatro", "cinco", "seis"];
 let cont=0;
 let casilla;
+const nombres=new Array()//aqui guardo los numeros de los nombres
+
+
 const hex=new Array();//Arreglo que contendra nuestro index;
 
 const list=[[1,1,1,1,1,1,"Ch'ien", 1],[2,2,2,2,2,2,"k'un",2],
@@ -47,6 +50,8 @@ function calcula(){
         if(cont==6){
             busqueda=nombre(hex);
             document.getElementById("nombreHex").innerHTML=""+busqueda[7] +" "+busqueda[6];
+            nombres.push(parseInt(busqueda[7], 10));
+            console.log(`àverts ${nombres[0]}`)
         }
     }
     else{
@@ -90,8 +95,9 @@ function dibuja(suma){
 
 function borrarLine(){
     cont--;
+
     document.getElementById("nombreHex").innerHTML=" ";
-    hex.pop();
+    hex.pop(); nombres.pop();
     casilla=document.getElementById(num[cont])
     if(casilla!=null){
         casilla.innerHTML=" ";
