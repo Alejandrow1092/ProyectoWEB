@@ -12,6 +12,9 @@ let nombres=[]//aqui guardo los numeros de los nombres
 let hex=[];//Arreglo que contendra nuestro index;
 let copiaHex=[];
 
+let leftInicial=-150;
+let botInicial=0;
+
 const list=[[1,1,1,1,1,1,"Ch'ien", 1],[2,2,2,2,2,2,"k'un",2],
             [2,1,2,2,2,1,"Chun",3],[1,2,2,2,1,2,"Meng",4],[2,1,2,1,1,1,"Hsu",5],
             [1,1,1,2,1,2,"Sung",6],[2,2,2,2,1,2,"Shih",7],[2,1,2,2,2,2,"PI",8],[1,1,2,1,1,1,"Hsiao Chu",9],
@@ -55,16 +58,22 @@ function calcula(){
         dibuja(suma);
         if(cont==6){
 
-                console.log(`yaaaaaa ${indice[0]}`)
+            
                 if(indice[0]==null){
                     busqueda=nombre(hex);
-                    document.getElementById("nombreHex").innerHTML=""+busqueda[7] +" "+busqueda[6];
+                    casilla=document.getElementById("nombreHex");
+                    casilla.style.bottom=0+"px";
+                    casilla.style.left=80+"px";
+                    
+                    casilla.innerHTML=""+busqueda[7] +" "+busqueda[6];
+                    
                     nombres.push(busqueda[7]);
-                    console.log(`àverts ${nombres[0]}`)
+                   
                     bnadera=0;
                     
                 }
                 else{
+                    botInicial=0;
                     copiaHex=hex.slice();
                     corrige();
                     
@@ -84,26 +93,28 @@ function dibuja(suma){
         casilla=document.getElementById(num[cont]);
         casilla.innerHTML= "_________ x ________";
         hex.push(3); 
-
+        animacion(num[cont]);
         indice.push(cont);
-        
         cont++;
     }
     else if(suma==7){
         casilla=document.getElementById(num[cont]);
         casilla.innerHTML= "___________________";
+        animacion(num[cont]);
         hex.push(1);
         cont++;
     }
     else if(suma==8){
         casilla=document.getElementById(num[cont]);
         casilla.innerHTML= `_________   _________`;
+        animacion(num[cont]);
         hex.push(2);
         cont++;
     }
     else if(suma==9){
         casilla=document.getElementById(num[cont]);
         casilla.innerHTML= "_________ 0 ________";
+        animacion(num[cont]);
         hex.push(4); 
         indice.push(cont);
         cont++;
@@ -117,9 +128,10 @@ function dibuja(suma){
 }
 
 function borrarLine(){
-    
+    botInicial-=30;
     cont1=0; 
     nombres=[];
+    
     //hex=new Array();
 
     if(bandera==1){
@@ -161,6 +173,8 @@ function borrarLine(){
         document.getElementById("nombreHex").innerHTML=" ";
         hex=[];
         indice=[];
+        leftInicial=-150;
+        botInicial=0;
     }
     //console.log(`Use: ${num[cont]}`);
 }
@@ -174,7 +188,8 @@ function borrarHex(){
     indice=[];
     nombres=[];
     hex=[];
-    
+    leftInicial=-150;
+    botInicial=0;    
         document.getElementById("hexagrama1").style.visibility="hidden"
         document.getElementById("hexagrama2").style.visibility="hidden"
     
@@ -238,7 +253,7 @@ function corrige(){
                 copiaHex[indice[x]]=2;
             }
         }
-
+        console.log(`valores left ${leftInicial}  bot ${botInicial}` );
         defineCSS("hexagrama1");
         dibujaa(0);
 
@@ -250,6 +265,8 @@ function corrige(){
         }
 
         defineCSS("hexagrama2");
+        botInicial=0;
+        console.log(`valores left ${leftInicial}  bot ${botInicial}` );
         dibujaa(1);
 }
     
@@ -259,28 +276,64 @@ function dibujaa(f){
     let busqueda;
 
         for(x=0;x<6;x++){
-            //console.log(`${hex[x]}`);
-            if(hex[x]===1){
-                //console.log(`${num1[cont1]}`);
-                document.getElementById(num1[cont1]).innerHTML="___________________";
+            if(indice[x]!=null && indice[x]==x){
+                if(copiaHex[indice[x]]==1){
+                
+                    document.getElementById(num1[cont1]).innerHTML="___________________";
+                    animacion(num1[cont1]);
+                }
+                else{
+                    
+                    document.getElementById(num1[cont1]).innerHTML=`_________   _________`;
+                    animacion(num1[cont1]);
+                }
             }
             else{
-                console.log(`${num1[cont1]}`);
-                document.getElementById(num1[cont1]).innerHTML=`_________   _________`;
+                if(copiaHex[x]==1){
+                    document.getElementById(num1[cont1]).innerHTML="___________________";
+                    animacion(num1[cont1]); 
+                }
+                else{
+                    document.getElementById(num1[cont1]).innerHTML=`_________   _________`;
+                    animacion(num1[cont1]);
+                }
             }
+            
         cont1++;         
-        //console.log(`El valor de cont es ${cont1}`)
-        }
 
+        }
         busqueda=nombre(copiaHex);
-        document.getElementById(nh[f]).innerHTML=""+busqueda[7] +" "+busqueda[6];
+        casilla=document.getElementById(nh[f]);
+        casilla.style.bottom=0+"px";
+        casilla.style.left=80+"px";
+        casilla.innerHTML=""+busqueda[7] +" "+busqueda[6];
         nombres.push(busqueda[7]); 
 
-    return cont1;
+   
 }
 
 
 function defineCSS(nombre){
     //document.querySelector(nombre).setAttribute("style","visibility: visible");
     document.getElementById(nombre).style.visibility="visible"
+}
+
+
+function animacion(elem1){
+    botInicial+=30;
+    let id=setInterval(frame, 5);
+    let elem=document.getElementById(elem1);
+    
+    elem.style.bottom=botInicial+"px";
+    function frame(){
+        if(leftInicial==25){
+            clearInterval(id);
+        }
+        else{
+            leftInicial++;
+            elem.style.left=leftInicial+"px";
+
+        }
+    }
+    leftInicial=-150;
 }
