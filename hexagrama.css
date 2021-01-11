@@ -9,23 +9,21 @@ body{
     width: 300px;
     height: 200px;
     padding: 50px;
-    background-color: rgba(169, 169, 169, 0.644);
+    background-color: rgba(189, 3, 3, 0.856);
+    position: relative;
+    border-radius: 15px 50px 30px;
 }
 
 .camposTexto input{
     width: 300px;
-    height: 35px;
-}
-
-.Text{
-    padding-top: 15px;
-   
-    padding: 10px;
+    height: 30px;
+    
 }
 
 .Text input{
-    padding: px;
+    margin: 5px;
 }
+
 
 .Botones{
     margin-top: 20px;
@@ -34,8 +32,13 @@ body{
 }
 
 .Botones button{
+    margin: 0;
     color: white;
     background-color: #e65501;
+    width: auto;
+    height: 30px;
+    position: relative;
+    left: 5px;
 }
 
 /*>>>>>>>>>>>>>>>>>>>>>>>>>>*/

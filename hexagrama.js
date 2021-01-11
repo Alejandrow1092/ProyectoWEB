@@ -3,13 +3,14 @@ const num =["uno", "dos", "tres", "cuatro", "cinco", "seis"];
 const num1=["uno1", "dos1", "tres1", "cuatro1", "cinco1", "seis1",
 "uno2", "dos2", "tres2", "cuatro2", "cinco2", "seis2"];
 const nh=["nombreHex11", "nombreHex22"];
-let cont=0;
-let cont1=0;
-let casilla;
-let bandera=0;
-let indice=new Array();
-let nombres=new Array()//aqui guardo los numeros de los nombres
-const hex=new Array();//Arreglo que contendra nuestro index;
+let cont=0;//indica el indice donde se guardara en el arreglo hex
+let cont1=0;//contador que recorre el arreglo num
+let casilla; //guarda algunos elementos de del DOM
+let bandera=0; //bandera que dice si se calculo un hexagrama compuesto
+let indice=[]; //arreglo que guarda los yin/yan mutantes
+let nombres=[]//aqui guardo los numeros de los nombres
+let hex=[];//Arreglo que contendra nuestro index;
+let copiaHex=[];
 
 const list=[[1,1,1,1,1,1,"Ch'ien", 1],[2,2,2,2,2,2,"k'un",2],
             [2,1,2,2,2,1,"Chun",3],[1,2,2,2,1,2,"Meng",4],[2,1,2,1,1,1,"Hsu",5],
@@ -41,6 +42,7 @@ function calcula(){
 
     let campos; //campos a leer
     let suma=0;
+    let busqueda;
     
     
     campos=document.getElementsByName("ingresa");
@@ -52,18 +54,22 @@ function calcula(){
     if(cont<6){
         dibuja(suma);
         if(cont==6){
-                
-                console.log(`el valor de indice es: ${indice[0]}`)
-                if(indice[0]!=null){
-                    corrige();
-                    document.getElementById("nombreHex").innerHTML="";
-                    bandera=1;
-                }
-                else{
+
+                console.log(`yaaaaaa ${indice[0]}`)
+                if(indice[0]==null){
                     busqueda=nombre(hex);
                     document.getElementById("nombreHex").innerHTML=""+busqueda[7] +" "+busqueda[6];
                     nombres.push(busqueda[7]);
                     console.log(`àverts ${nombres[0]}`)
+                    bnadera=0;
+                    
+                }
+                else{
+                    copiaHex=hex.slice();
+                    corrige();
+                    
+                    document.getElementById("nombreHex").innerHTML="";
+                    bandera=1;
                 } 
         }
     }
@@ -77,7 +83,10 @@ function dibuja(suma){
     if(suma==6){
         casilla=document.getElementById(num[cont]);
         casilla.innerHTML= "_________ x ________";
-        hex.push(3); indice.push(cont);
+        hex.push(3); 
+
+        indice.push(cont);
+        
         cont++;
     }
     else if(suma==7){
@@ -95,8 +104,8 @@ function dibuja(suma){
     else if(suma==9){
         casilla=document.getElementById(num[cont]);
         casilla.innerHTML= "_________ 0 ________";
-        hex.push(4); indice.push(cont);
-       
+        hex.push(4); 
+        indice.push(cont);
         cont++;
     }
     else{
@@ -108,24 +117,36 @@ function dibuja(suma){
 }
 
 function borrarLine(){
-    cont1=0; hex.pop(); nombres.pop();
-
+    
+    cont1=0; 
+    nombres=[];
+    //hex=new Array();
 
     if(bandera==1){
         document.getElementById("hexagrama1").style.visibility="hidden"
         document.getElementById("hexagrama2").style.visibility="hidden"
     }
-    //if(hex[cont-1]==4 || hex[cont-1]==3){
-        //indice.pop();
-    //
-
+    
     cont--;
+
+    console.log(`valor del cont ${cont}
+                valor de hex ${hex[cont]}`);
+
+    
+
+    for(x=0;copiaHex[x]!=null;x++){
+        console.log(`valor de hex ${copiaHex[x]}, x: ${x}`);
+    }
 
     if(hex[cont]===4 || hex[cont]===3){
         indice.pop();
+        console.log("entro al if")
+        //if(indice[0]==null) bandera=0;
     }
-    
 
+    hex.pop(); 
+
+    
     //borro el nombre
     document.getElementById("nombreHex").innerHTML=" ";
     //borro el elemento
@@ -135,10 +156,11 @@ function borrarLine(){
         casilla.innerHTML=" ";
     }
     if(cont==-1){
+        bandera=0;
         cont=0;
         document.getElementById("nombreHex").innerHTML=" ";
-        hex.pop();
-        indice=new Array();;
+        hex=[];
+        indice=[];
     }
     //console.log(`Use: ${num[cont]}`);
 }
@@ -149,8 +171,9 @@ function borrarHex(){
      cont=0;
      cont1=0;
       bandera=0;
-    indice=new Array();
-    nombres=new Array();
+    indice=[];
+    nombres=[];
+    hex=[];
     
         document.getElementById("hexagrama1").style.visibility="hidden"
         document.getElementById("hexagrama2").style.visibility="hidden"
@@ -181,8 +204,9 @@ function borrarHex(){
 }
 
 function nombre(Hex){
-let averts;
 let cuenta=0;
+let averts;
+
     for(y=0;y<64;y++){
 
         averts=list[y];
@@ -197,8 +221,7 @@ let cuenta=0;
         if(cuenta==(6)){
             return averts;
         }
-        else cuenta=0; 
-        
+        else cuenta=0;     
     }
     
 }
@@ -208,11 +231,11 @@ function corrige(){
     let x=0;
     
         for(x=0;indice[x]!=null; x++){
-            if(hex[indice[x]]===3){
-                hex[indice[x]]=1;
+            if(copiaHex[indice[x]]===3){
+                copiaHex[indice[x]]=1;
             }
             else{
-                hex[indice[x]]=2;
+                copiaHex[indice[x]]=2;
             }
         }
 
@@ -220,10 +243,10 @@ function corrige(){
         dibujaa(0);
 
         for(x=0;indice[x]!=null; x++){
-            if(hex[indice[x]]===1){
-                hex[indice[x]]=2;
+            if(copiaHex[indice[x]]===1){
+                copiaHex[indice[x]]=2;
             }
-            else hex[indice[x]]=1;
+            else copiaHex[indice[x]]=1;
         }
 
         defineCSS("hexagrama2");
@@ -236,9 +259,9 @@ function dibujaa(f){
     let busqueda;
 
         for(x=0;x<6;x++){
-            console.log(`${hex[x]}`);
+            //console.log(`${hex[x]}`);
             if(hex[x]===1){
-                console.log(`${num1[cont1]}`);
+                //console.log(`${num1[cont1]}`);
                 document.getElementById(num1[cont1]).innerHTML="___________________";
             }
             else{
@@ -249,7 +272,7 @@ function dibujaa(f){
         //console.log(`El valor de cont es ${cont1}`)
         }
 
-        busqueda=nombre(hex);
+        busqueda=nombre(copiaHex);
         document.getElementById(nh[f]).innerHTML=""+busqueda[7] +" "+busqueda[6];
         nombres.push(busqueda[7]); 
 
