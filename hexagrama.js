@@ -1,4 +1,5 @@
-
+var r=[];
+var co=1;
 const num =["uno", "dos", "tres", "cuatro", "cinco", "seis"];
 const num1=["uno1", "dos1", "tres1", "cuatro1", "cinco1", "seis1",
 "uno2", "dos2", "tres2", "cuatro2", "cinco2", "seis2"];
@@ -20,7 +21,7 @@ const list=[[1,1,1,1,1,1,"Ch'ien", 1],[2,2,2,2,2,2,"k'un",2],
             [1,1,1,2,1,2,"Sung",6],[2,2,2,2,1,2,"Shih",7],[2,1,2,2,2,2,"PI",8],[1,1,2,1,1,1,"Hsiao Chu",9],
             [1,1,1,2,1,1,"Lu",10],[2,2,2,1,1,1,"t'ai",11],[1,1,1,2,2,2,"P'i",12],[1,1,1,1,2,1,"T'ung Jen",13], 
             [1,2,1,1,1,1,"Ta yu",14], [2,2,2,1,2,2,"Ch'ien",15], [2,2,1,2,2,2,"Yü",16], [2,1,1,2,2,1,"Sui",17], 
-            [1,2,2,1,1,2,"Ku",18], [2,2,2,2,1,1,"Lin",19], [1,1,2,2,2,2,2,"kuan",20], [1,2,1,2,2,1,"Shih Ho",21], 
+            [1,2,2,1,1,2,"Ku",18], [1,1,2,2,2,2,"Lin",19], [2,2,2,2,1,1,"kuan",20], [1,2,1,2,2,1,"Shih Ho",21], 
             [1,2,2,1,2,1,"Pi",22], [1,2,2,2,2,2,"Po",23], 
             [2,2,2,2,2,1,"Fu",24], [1,1,1,2,2,1,"Wu Wang",25], [1,2,2,1,1,1,"Ta Ch'u",26], [1,2,2,2,2,1,"I",27], 
             [2,1,1,1,1,2,"Ta kuo",28], [2,1,2,2,1,2,"K'an",29], [1,2,1,1,2,1,"Li",30], [2,1,1,1,2,2,"Hsien",31], 
@@ -66,10 +67,9 @@ function calcula(){
                     casilla.style.left=80+"px";
                     
                     casilla.innerHTML=""+busqueda[7] +" "+busqueda[6];
-                    
+                    r[0]=busqueda[7]
                     nombres.push(busqueda[7]);
-                   
-                    bnadera=0;
+                    bandera=0;
                     
                 }
                 else{
@@ -128,10 +128,12 @@ function dibuja(suma){
 }
 
 function borrarLine(){
+	r[0]=0;
+	co=1;
     botInicial-=30;
     cont1=0; 
     nombres=[];
-    
+   
     //hex=new Array();
 
     if(bandera==1){
@@ -180,8 +182,8 @@ function borrarLine(){
 }
 
 function borrarHex(){
-
-
+	r[0]=0;
+	co=1;
      cont=0;
      cont1=0;
       bandera=0;
@@ -307,9 +309,9 @@ function dibujaa(f){
         casilla.style.bottom=0+"px";
         casilla.style.left=80+"px";
         casilla.innerHTML=""+busqueda[7] +" "+busqueda[6];
-        nombres.push(busqueda[7]); 
-
-   
+        nombres.push(busqueda[7]);
+		r[co]=busqueda[7];
+   		co++;
 }
 
 
@@ -335,16 +337,17 @@ function animacion(elem1){
 
         }
     }
-	leftInicial=-150;
-	
+    leftInicial=-150;
+}
+
 function mOver(obj, x) {
-	obj.style.backgroundColor="green";
+	obj.style.backgroundColor="yellow";
+	document.getElementById(x).style.backgroundColor="yellow";
 switch (x){
 		
 		case 1:{
 		
 		document.getElementById("nombre").innerHTML = "1.  Cielo. Lo creativo. El principio generador";
-		
 			onmouseout=mouseOut(obj);
 	break;
 	}
@@ -601,13 +604,25 @@ switch (x){
 	break;
 	}
 
-
 }
 	
 }
-
-function mOut(obj) {
-	obj.style.backgroundColor="#D3D3D3";
+function mOut(obj, x) {
+	obj.style.backgroundColor="GhostWhite";
 	document.getElementById("nombre").innerHTML = "";
+	document.getElementById(x).style.backgroundColor="GhostWhite";
 }
+
+function m1Over(obj, x) {
+	var y=x;
+	mOver(obj,r[y]);
+	if(r[y]==0){
+	obj.style.backgroundColor="GhostWhite";
+	}
+}
+
+function m1Out(obj, x) {
+	var y=x;
+	mOut(obj,r[y]);
+	obj.style.backgroundColor="GhostWhite";
 }
