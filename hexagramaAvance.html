@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <link href="hexagrama.css" rel="stylesheet" type="text/css" >
+        <link href="hexagrama.js" rel="">
+        <script src="hexagrama.js"></script>
+        <title>Hexagrama</title>
+    </head>
+
+    <body>
+            <div class="camposTexto">
+                <div class="Text">
+                    <input type="text" name="ingresa" placeholder="Ingresa numero 1"> <br>
+                    <input type="text" name="ingresa" placeholder="Ingresa numero 2"> <br>
+                    <input type="text" name="ingresa" placeholder="Ingresa numero 3"> <br>
+                </div>
+                <div class="Botones">
+                    <button onclick="calcula()">Aceptar</button>
+                    <button onclick="borrarLine()">Borrar Linea</button>
+                    <button onclick="borrarHex()">Borrar hexagrama</button>
+                </div>     
+            </div>    
+        
+        <div id="hexagrama" class="hexagrama"onmouseover="m1Over(this, 0)" onmouseout="m1Out(this, 0)">
+            <div id="seis" ></div>
+            <div id="cinco" ></div>
+            <div id="cuatro" ></div>
+            <div id="tres" ></div>
+            <div id="dos" ></div>
+            <div id="uno" ></div>
+            <div id="nombreHex" ></div>
+        </div>
+
+        <div id= "hexagrama1" class="hexagrama2"onmouseover="m1Over(this, 1)" onmouseout="m1Out(this, 1)">
+            <div id="seis1" ></div>
+            <div id="cinco1" ></div>
+            <div id="cuatro1" ></div>
+            <div id="tres1" ></div>
+            <div id="dos1" ></div>
+            <div id="uno1" ></div>
+            <div id="nombreHex11" ></div>
+        </div>
+
+        <div id="hexagrama2" class="hexagrama3" onmouseover="m1Over(this, 2)" onmouseout="m1Out(this, 2)">
+            <div id="seis2"></div>
+            <div id="cinco2"></div>
+            <div id="cuatro2"></div>
+            <div id="tres2"></div>
+            <div id="dos2"></div>
+            <div id="uno2"></div>
+            <div id="nombreHex22"></div>
+        </div>
+
+        <div class="tabla">
+            <table border=2>
+            <tr>
+                <td> Triagrama Superior</td>
+                <td>Ch'ien </td>
+                <td>Chen </td>
+                <td>K'an </td>
+                <td>Ken </td>
+                <td>K'un </td>
+                <td>Sun </td>
+                <td>Li </td>
+                <td>Tui </td>
+             </tr>
+
+             <tr>
+                <td > Triagrama Inferior</td>
+                <td colspan="8"> </td>
+             </tr>
+
+             <tr>
+                <td>Ch'ien</td>
+                <td><div id="1" onmouseover="mOver(this, 1)" onmouseout="mOut(this)">1</div></td>
+                <td><div id="34" onmouseover="mOver(this, 34)" onmouseout="mOut(this)">34</div></td>
+                <td><div id="5" onmouseover="mOver(this, 5)" onmouseout="mOut(this)">5</div></td>
+                <td><div id="26" onmouseover="mOver(this, 26)" onmouseout="mOut(this)">26</div></td>
+                <td><div id="11" onmouseover="mOver(this, 11)" onmouseout="mOut(this)">11</div> </td>
+                <td><div id="9" onmouseover="mOver(this, 9)" onmouseout="mOut(this)">9</div> </td>
+                <td><div id="14" onmouseover="mOver(this, 14)" onmouseout="mOut(this)">14</div> </td>
+                <td><div id="43" onmouseover="mOver(this, 43)" onmouseout="mOut(this)">43</div> </td>
+               
+             </tr>
+              
+             <tr>
+                 <td>Chen </td>
+                <td><div id="25" onmouseover="mOver(this, 25)" onmouseout="mOut(this)">25</div></td>
+                <td><div id="51" onmouseover="mOver(this, 51)" onmouseout="mOut(this)">51</div></td>
+                <td><div id="3" onmouseover="mOver(this, 3)" onmouseout="mOut(this)">3</div></td>
+                <td><div id="27" onmouseover="mOver(this, 27)" onmouseout="mOut(this)">27</div></td>
+                <td><div id="24" onmouseover="mOver(this, 24)" onmouseout="mOut(this)">24</div> </td>
+                <td><div id="42" onmouseover="mOver(this, 42)" onmouseout="mOut(this)">42</div> </td>
+                <td><div id="21" onmouseover="mOver(this, 21)" onmouseout="mOut(this)">21</div> </td>
+                <td><div id="17" onmouseover="mOver(this, 17)" onmouseout="mOut(this)">17</div> </td>
+                
+             </tr>
+
+             <tr>
+                 <td>K'an </td>
+                <td><div id="1" onmouseover="mOver(this, 6)" onmouseout="mOut(this)">6</div></td>
+                <td><div id="1" onmouseover="mOver(this, 40)" onmouseout="mOut(this)">40</div></td>
+                <td><div id="1" onmouseover="mOver(this, 29)" onmouseout="mOut(this)">29</div></td>
+                <td><div id="1" onmouseover="mOver(this, 4)" onmouseout="mOut(this)">4</div></td>
+                <td><div id="1" onmouseover="mOver(this, 7)" onmouseout="mOut(this)">7</div> </td>
+                <td><div id="1" onmouseover="mOver(this, 59)" onmouseout="mOut(this)">59</div> </td>
+                <td><div id="1" onmouseover="mOver(this, 64)" onmouseout="mOut(this)">64</div> </td>
+                <td><div id="1" onmouseover="mOver(this, 47)" onmouseout="mOut(this)">47</div> </td>
+                 
+             </tr>
+
+             <tr>
+		 <td>Ken </td>
+                <td><div id="33" onmouseover="mOver(this, 33)" onmouseout="mOut(this)">33</div></td>
+                <td><div id="62" onmouseover="mOver(this, 62)" onmouseout="mOut(this)">62</div></td>
+                <td><div id="39" onmouseover="mOver(this, 39)" onmouseout="mOut(this)">39</div></td>
+                <td><div id="52" onmouseover="mOver(this, 52)" onmouseout="mOut(this)">52</div></td>
+                <td><div id="15" onmouseover="mOver(this, 15)" onmouseout="mOut(this)">15</div> </td>
+                <td><div id="55" onmouseover="mOver(this, 55)" onmouseout="mOut(this)">55</div> </td>
+                <td><div id="56" onmouseover="mOver(this, 56)" onmouseout="mOut(this)">56</div> </td>
+                <td><div id="31" onmouseover="mOver(this, 31)" onmouseout="mOut(this)">31</div> </td>
+
+             </tr>
+
+             <tr>
+		 <td>K´un </td>
+                <td><div id="12" onmouseover="mOver(this, 12)" onmouseout="mOut(this)">12</div></td>
+                <td><div id="16" onmouseover="mOver(this, 16)" onmouseout="mOut(this)">16</div></td>
+                <td><div id="8" onmouseover="mOver(this, 8)" onmouseout="mOut(this)">8</div></td>
+                <td><div id="23" onmouseover="mOver(this, 23)" onmouseout="mOut(this)">23</div></td>
+                <td><div id="2" onmouseover="mOver(this, 2)" onmouseout="mOut(this)">2</div> </td>
+                <td><div id="20" onmouseover="mOver(this, 20)" onmouseout="mOut(this)">20</div> </td>
+                <td><div id="35" onmouseover="mOver(this, 35)" onmouseout="mOut(this)">35</div> </td>
+                <td><div id="45" onmouseover="mOver(this, 45)" onmouseout="mOut(this)">45</div> </td>
+                 
+             </tr>
+
+             <tr>    
+		 <td>Sun </td>        	   
+		<td><div id="44" onmouseover="mOver(this, 44)" onmouseout="mOut(this)">44</div></td>
+                <td><div id="32" onmouseover="mOver(this, 32)" onmouseout="mOut(this)">32</div></td>
+                <td><div id="48" onmouseover="mOver(this, 48)" onmouseout="mOut(this)">48</div></td>
+                <td><div id="18" onmouseover="mOver(this, 18)" onmouseout="mOut(this)">18</div></td>
+                <td><div id="46" onmouseover="mOver(this, 46)" onmouseout="mOut(this)">46</div> </td>
+                <td><div id="57" onmouseover="mOver(this, 57)" onmouseout="mOut(this)">57</div> </td>
+                <td><div id="50" onmouseover="mOver(this, 50)" onmouseout="mOut(this)">50</div> </td>
+                <td><div id="28" onmouseover="mOver(this, 28)" onmouseout="mOut(this)">28</div> </td>
+             </tr>
+
+             <tr>
+                 <td>Li </td>
+                <td><div id="13" onmouseover="mOver(this, 13)" onmouseout="mOut(this)">13</div></td>
+                <td><div id="55" onmouseover="mOver(this, 55)" onmouseout="mOut(this)">55</div></td>
+                <td><div id="63" onmouseover="mOver(this, 63)" onmouseout="mOut(this)">63</div></td>
+                <td><div id="22" onmouseover="mOver(this, 22)" onmouseout="mOut(this)">22</div></td>
+                <td><div id="36" onmouseover="mOver(this, 36)" onmouseout="mOut(this)">36</div> </td>
+                <td><div id="37" onmouseover="mOver(this, 37)" onmouseout="mOut(this)">37</div> </td>
+                <td><div id="30" onmouseover="mOver(this, 30)" onmouseout="mOut(this)">30</div> </td>
+                <td><div id="49" onmouseover="mOver(this, 49)" onmouseout="mOut(this)">49</div> </td>
+                 
+             </tr>
+
+             <tr>
+                 <td>Tui </td>
+                <td><div id="10" onmouseover="mOver(this, 10)" onmouseout="mOut(this)">10</div></td>
+                <td><div id="54" onmouseover="mOver(this, 54)" onmouseout="mOut(this)">54</div></td>
+                <td><div id="60" onmouseover="mOver(this, 60)" onmouseout="mOut(this)">60</div></td>
+                <td><div id="41" onmouseover="mOver(this, 41)" onmouseout="mOut(this)">41</div></td>
+                <td><div id="19" onmouseover="mOver(this, 19)" onmouseout="mOut(this)">19</div></td>
+                <td><div id="61" onmouseover="mOver(this, 61)" onmouseout="mOut(this)">61</div></td>
+                <td><div id="38" onmouseover="mOver(this, 38)" onmouseout="mOut(this)">38</div></td>
+                <td><div id="58" onmouseover="mOver(this, 58)" onmouseout="mOut(this)">58</div></td>
+
+             </tr>
+<br>
+<br>
+            </table>
+             <p id="nombre"></p>  
+        </div>
+
+    </body>
+
+
+</html>
