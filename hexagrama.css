@@ -1,0 +1,159 @@
+body{
+    background-color:GhostWhite;
+    ;
+    margin:0;
+}
+/*MENU*/
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.active {
+    background-color: #4CAF50;
+}
+
+/*Color de la barra de menú al pasar el puntero sobre las opciones*/
+li a:hover {
+    background-color: rgb(167, 158, 158);
+}
+.nombres{
+background-color: blue;
+}
+
+/*>>>>General>>>>>>>>>> SlateGray
+LightSlateGray
+*/
+.camposTexto{
+    float: left;
+    margin: 50px;
+    width: 300px;
+    height: 200px;
+    padding: 50px;
+    background-color:rgba(54, 88, 88, 0.767);
+    position: relative;
+    border-radius: 15px 50px 30px;
+}
+
+.camposTexto input{
+    width: 300px;
+    height: 30px;
+}
+
+.Text input{
+    margin: 5px;
+}
+
+
+.Botones{
+    margin-top: 20px;
+    padding-top: 20px;
+}
+
+.Botones button{
+    margin: 0;
+    color: rgb(0, 0, 0);
+    background-color: #92f38ec2;
+    width: auto;
+    height: 30px;
+    position: relative;
+    left: 5px;
+}
+
+/*>>>>>>>>>>>>>>>>>>>>>>>>>>*/
+/*Mi animacion estará aquí*/
+.hexagrama{
+    float: left;
+    position: relative;
+    top: 100px;
+    width: 200px;
+    height: 200px;
+    margin: 5px;
+    background-color: aliceblue;
+    border-radius: 30px;
+    text-align: center;  
+}
+
+.hexagrama2{
+    float: left;
+    position: relative;
+    top: 100px;
+    width: 200px;
+    height: 200px;
+    margin: 5px;
+    background-color: aliceblue;
+    border-radius: 30px;
+    visibility: hidden;
+    text-align: center;
+    
+}
+
+.hexagrama3{
+    float: left;
+    position: relative;
+    top: 100px;
+    width: 200px;
+    height: 200px;
+    margin: 5px;
+    background-color: aliceblue;
+    border-radius: 30px;
+    visibility: hidden;
+    text-align: center;
+}
+
+.hexagrama div{
+    bottom: 0px;
+    left: -150px;
+    position:absolute;
+}
+
+.hexagrama2 div{
+    bottom: 0px;
+    left: -150px;
+    position:absolute;
+}
+
+.hexagrama3 div{
+    bottom: 0px;
+    left: -150px;
+    position:absolute;
+}
+
+.tabla{
+    top: 300px;
+    float: right;
+    clear: both;
+    position: absolute;
+    width: auto;
+    right: 400px;
+}
+
+#nombre {
+    position: absolute;
+    top: 400px;
+    float: left;
+    clear: right;
+   
+    /*text-align: right;*/
+}
+
+
+
